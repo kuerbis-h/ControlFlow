@@ -156,7 +156,7 @@ class Agent(ControlFlowModel, abc.ABC):
             return get_model_from_string(model)
         return model
 
-    @field_serializer("tools")
+    #@field_serializer("tools")
     def _serialize_tools(self, tools: list[Tool]):
         tools = controlflow.tools.as_tools(tools)
         return [t.model_dump(include={"name", "description"}) for t in tools]
